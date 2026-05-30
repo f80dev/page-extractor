@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../dist-chrome/background",
+    "types": ["chrome"],
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "target": "ES2022"
+  },
+  "include": ["src/background/**/*.ts"]
+}

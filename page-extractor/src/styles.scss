@@ -1,0 +1,88 @@
+@use '@angular/material' as mat;
+
+// Use M3 theming (Angular Material 21 default)
+$theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$orange-palette
+  ),
+  typography: (
+    plain-family: 'Segoe UI, system-ui, sans-serif'
+  ),
+  density: (
+    scale: 0
+  )
+));
+
+@include mat.core();
+@include mat.all-component-themes($theme);
+
+// Global reset
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  background: #fafafa;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-size: 20px !important;
+}
+
+:focus-visible {
+  outline: 2px solid #1976d2;
+  outline-offset: 2px;
+}
+
+a {
+  color: #1976d2;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.mat-mdc-tab-body-content {
+  padding-top: 16px;
+}
+
+// Material overrides
+.mat-mdc-snack-bar-container {
+  --mdc-snackbar-container-color: #333;
+  --mdc-snackbar-supporting-text-color: white;
+}

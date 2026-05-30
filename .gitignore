@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Angular build
+page-extractor/dist/
+page-extractor/tmp/
+page-extractor/out-tsc/
+
+# Build output
+dist-chrome/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Test outputs
+test-results/
+playwright-report/
