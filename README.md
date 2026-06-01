@@ -36,24 +36,29 @@
 
 ```
 page-extractor/
-├── page-extractor/
-│   └── src/
-│       ├── app/
-│       │   ├── popup/          # Popup Angular component
-│       │   └── options/        # Options page Angular component
-│       ├── background/
-│       │   └── service-worker.ts  # Orchestrator (scroll → extract → explore → POST)
-│       ├── content-script/
-│       │   ├── message-bridge.js  # postMessage bridge ↔ background
-│       │   ├── scroll-bot.js      # Human-like scroll anti-bot
-│       │   ├── extractor.js       # DOM → semantic JSON
-│       │   └── link-finder.js    # DFS link discovery
-│       └── shared/
-│           ├── models/         # TypeScript interfaces
-│           └── services/       # Angular services (storage, api, extraction, scroll, explorer)
+├── src/
+│   ├── app/                    # Root Angular app component (shell routing)
+│   ├── popup/                  # Popup Angular component
+│   ├── options/                # Options page Angular component
+│   ├── background/
+│   │   └── service-worker.ts   # Orchestrator (scroll → extract → explore → POST)
+│   ├── content-script/
+│   │   ├── message-bridge.js  # postMessage bridge ↔ background
+│   │   ├── scroll-bot.js      # Human-like scroll anti-bot
+│   │   ├── extractor.js       # DOM → semantic JSON
+│   │   └── link-finder.js     # DFS link discovery
+│   ├── shared/
+│   │   ├── models/             # TypeScript interfaces
+│   │   └── services/          # Angular services (storage, api, extraction, scroll, explorer)
+│   ├── index.html
+│   ├── main.ts
+│   ├── manifest.json
+│   └── styles.scss
+├── page-extractor/             # Angular project (build source)
 ├── dist-chrome/                # Built extension (load in Chrome)
 ├── test-extension.js           # Playwright test suite
-└── SPEC.md                     # Full specification
+├── SPEC.md                     # Full specification
+└── README.md
 ```
 
 ---
